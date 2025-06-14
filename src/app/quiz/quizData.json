@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "question": "What experience are you looking for today?",
+    "options": ["Relaxation and unwinding", "Enhanced creativity or focus", "Better sleep quality", "Physical relief or recovery", "Social enjoyment with friends"]
+  },
+  {
+    "id": 2,
+    "question": "How would you describe your experience level with cannabis?",
+    "options": ["New explorer (little to no experience)", "Occasional user (a few times a month)", "Regular enthusiast (weekly use)", "Experienced consumer (daily use)", "Returning after a long break"]
+  },
+  {
+    "id": 3,
+    "question": "Which consumption method do you prefer or are interested in trying?",
+    "options": ["Flower for smoking or vaping", "Edibles (gummies, chocolates, beverages)", "Vape cartridges or disposables", "Tinctures or oils", "Topicals (creams, balms)"]
+  },
+  {
+    "id": 4,
+    "question": "When do you typically enjoy cannabis?",
+    "options": ["Morning or daytime", "Evening to unwind", "Before bed", "During social activities", "When needed for specific relief"]
+  },
+  {
+    "id": 5,
+    "question": "What's your preference when it comes to THC and CBD balance?",
+    "options": ["THC-dominant (more euphoric effects)", "CBD-dominant (minimal intoxication)", "Balanced THC/CBD (moderate effects)", "Microdose (subtle, functional effects)", "Not sure yet (I'd like guidance)"]
+  },
+  {
+    "id": 6,
+    "question": "Which potential effects would you prefer to minimize?",
+    "options": ["Anxiety or racing thoughts", "Sedation or feeling too relaxed", "Cognitive effects (memory, focus)", "Dry mouth or increased appetite", "Strong intoxication or euphoria"]
+  },
+  {
+    "id": 7,
+    "question": "What activities do you typically enjoy while using cannabis?",
+    "options": ["Relaxing at home (TV, reading, etc.)", "Creative pursuits (art, music, writing)", "Physical activities (yoga, hiking, exercise)", "Social gatherings or conversations", "Sleep support or nighttime routine"]
+  }
+]
