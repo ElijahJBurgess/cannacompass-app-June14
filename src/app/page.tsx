@@ -22,7 +22,6 @@ import {
   Instagram,
   Linkedin,
   Leaf,
-  ArrowRight,
   ChevronDown,
   Package,
   Star,
@@ -115,17 +114,27 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-8 py-5">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-14 bg-green-900 rounded-lg flex items-center justify-center">
-                <Leaf className="w-10 h-10 text-white" />
-              </div>
-              <div className="w-40 h-5 bg-green-900 rounded flex items-center justify-center">
-                <span className="text-white text-lg font-bold">CannaCompass</span>
-              </div>
+            <div className="flex items-center gap-0">
+              <Image
+                src="/Images/cannacompass-compass-logo.png"
+                alt="CannaCompass Logo"
+                width={64}
+                height={56}
+                className="w-16 h-14 object-contain block align-middle m-0 p-0"
+                style={{marginRight: '-8px'}}
+              />
+              <Image
+                src="/Images/cannacompass-text-logo.png"
+                alt="CannaCompass"
+                width={260}
+                height={40}
+                className="w-64 h-10 object-contain block align-middle m-0 p-0"
+                style={{marginLeft: '-8px'}}
+              />
             </div>
 
             {/* Navigation Links */}
-            <div className="flex items-center gap-14">
+            <div className="flex items-center gap-8">
               <div className="flex items-center gap-8">
                 <Link href="/" className="text-neutral-800 text-base font-semibold font-['Poppins'] leading-loose">
                   Home
@@ -139,23 +148,16 @@ export default function Home() {
                   </Link>
                   <ChevronDown className="w-4 h-4 text-neutral-800" />
                 </div>
-                <Link href="/contact" className="text-neutral-800 text-base font-semibold font-['Poppins'] leading-loose">
-                  Contact
-                </Link>
-                <Link href="/login" className="text-neutral-800 text-base font-semibold font-['Poppins'] leading-loose">
-                  Login
-                </Link>
               </div>
 
               {/* Get Started Button */}
               <Link 
                 href="/quiz" 
-                className="w-40 p-3 bg-green-900 rounded-[121px] shadow-button outline outline-1 outline-offset-[-1px] outline-green-950 flex justify-center items-center gap-3"
+                className="w-40 p-3 bg-green-900 rounded-[121px] shadow-button outline outline-1 outline-offset-[-1px] outline-green-950 flex justify-center items-center"
               >
                 <span className="text-white text-base font-semibold font-['Poppins'] leading-loose">
                   Get Started
                 </span>
-                <ArrowRight className="w-7 h-7 text-white" />
               </Link>
             </div>
           </div>
@@ -167,7 +169,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-[660px]">
           <Image
-            src="/images/hero-bg.png"
+            src="/Images/hero-bg.png"
             alt="Hero Background"
             fill
             className="object-cover"
@@ -193,7 +195,6 @@ export default function Home() {
                   <span className="text-white text-lg font-semibold font-['Poppins'] leading-9">
                     Start Quiz
                   </span>
-                  <ArrowRight className="w-7 h-7 text-white" />
                 </Link>
 
                 <button
@@ -213,7 +214,7 @@ export default function Home() {
         {/* How It Works Section */}
         <section className="py-24 px-8">
           <div className="max-w-[987.50px] mx-auto">
-            <div className="flex flex-col items-center gap-12">
+            <div className="flex flex-col items-center gap-8">
               {/* Header */}
               <div className="w-[594px] flex flex-col items-center gap-3.5">
                 <div className="w-28 flex flex-col items-center gap-1.5">
@@ -281,9 +282,9 @@ export default function Home() {
         </section>
 
         {/* Instantly Connect With Your Needs Section */}
-        <section className="py-24 px-8">
+        <section className="py-16 px-8">
           <div className="max-w-[1440px] mx-auto flex flex-col gap-12">
-            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-8">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-2">
               <div>
                 <div className="text-lime-700 text-base font-bold font-['Manrope'] capitalize leading-tight mb-2">
                   HOW IT WORKS
@@ -354,7 +355,7 @@ export default function Home() {
                     </div>
                   </div>
                   <button className="absolute bottom-6 right-6 w-11 h-11 bg-lime-700 rounded-3xl flex items-center justify-center shadow-md">
-                    <ArrowRight className="w-6 h-6 text-white" />
+                    <Package className="w-6 h-6 text-white" />
                   </button>
                 </div>
               ))}
@@ -428,20 +429,19 @@ export default function Home() {
 
         {/* Call to Action Section */}
         <section className="relative py-24 px-8 bg-green-900 overflow-hidden">
-          {/* Optional: Add a background image overlay if available */}
-          <div className="absolute inset-0 opacity-20 bg-[url('https://placehold.co/1440x400?text=Background')] bg-cover bg-center pointer-events-none" />
+          {/* Background image */}
+          <div className="absolute inset-0 bg-[url('/Images/cc-hero-heading-1.png')] bg-cover bg-center pointer-events-none" />
           <div className="relative max-w-[586px] mx-auto flex flex-col items-center gap-7 z-10">
-            <h2 className="text-white text-5xl font-extrabold font-['Manrope'] capitalize leading-[68px] text-center">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight text-center">
               Ready to Find Your Perfect Cannabis Match?
             </h2>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <button className="w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-green-900 text-lg font-semibold font-['Poppins'] leading-9">
+            <div className="flex justify-center items-center">
+              <Link 
+                href="/quiz"
+                className="w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-green-900 text-lg font-semibold font-['Poppins'] leading-9"
+              >
                 Start Quiz
-              </button>
-              <button className="w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-green-900 text-lg font-semibold font-['Poppins'] leading-9">
-                View Products
-                <ShoppingBag className="w-7 h-7 text-green-900" />
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -452,13 +452,23 @@ export default function Home() {
         <div className="max-w-[1387px] mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
           {/* Logo and Description */}
           <div className="w-80 flex flex-col gap-3">
-            <div className="flex items-center gap-1.5 mb-2">
-              <div className="w-11 h-11 bg-green-900 rounded-full flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" aria-hidden="true" />
-              </div>
-              <div className="w-40 h-5 bg-green-900 rounded flex items-center justify-center">
-                <span className="text-white text-lg font-bold">CannaCompass</span>
-              </div>
+            <div className="flex items-center gap-0 mb-2">
+              <Image
+                src="/Images/cannacompass-compass-logo.png"
+                alt="CannaCompass Logo"
+                width={44}
+                height={44}
+                className="w-11 h-11 object-contain block align-middle m-0 p-0"
+                style={{marginRight: '-8px'}}
+              />
+              <Image
+                src="/Images/cannacompass-text-logo.png"
+                alt="CannaCompass"
+                width={260}
+                height={40}
+                className="w-64 h-10 object-contain block align-middle m-0 p-0"
+                style={{marginLeft: '-8px'}}
+              />
             </div>
             <div className="w-72 text-neutral-700 text-lg font-normal font-['Inter'] leading-relaxed">
               CannaCompass let you find Your Perfect Cannabis Match with AI
@@ -471,7 +481,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-6">
               <div className="text-neutral-700 text-lg font-normal font-['Inter'] leading-relaxed">
-                About | Blog | Terms & Privacy | Contact
+                About | Blog | Terms & Privacy
               </div>
               <div className="flex items-center gap-4">
                 <Twitter className="w-6 h-6 text-green-800" aria-label="Follow us on Twitter" />
