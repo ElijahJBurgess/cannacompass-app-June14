@@ -33,6 +33,22 @@ export default function ResultsPage() {
     const fetchMatches = async () => {
       setLoading(true);
 
+      // First try to get pre-fetched results from loading page
+      const cachedResults = localStorage.getItem('quiz_results');
+      if (cachedResults) {
+        try {
+          const parsedResults = JSON.parse(cachedResults);
+          setProducts(parsedResults);
+          setLoading(false);
+          // Clear the cache after using it
+          localStorage.removeItem('quiz_results');
+          return;
+        } catch (error) {
+          console.error('Error parsing cached results:', error);
+        }
+      }
+
+      // Fallback: fetch from database if no cached results
       const userId = getUserId();
       if (!userId) {
         console.error('User ID not found.');
@@ -66,53 +82,53 @@ export default function ResultsPage() {
     <div className="min-h-screen bg-[#F1FFF4] py-12 px-4 md:px-8 relative overflow-hidden">
       {/* Decorative Leaf Images */}
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-20 h-20 absolute top-10 left-10 opacity-20 rotate-[15deg] pointer-events-none select-none animate-float z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-24 h-24 absolute bottom-20 right-10 opacity-15 rotate-[-25deg] pointer-events-none select-none animate-drift z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-16 h-16 absolute top-1/4 right-1/4 opacity-10 rotate-[40deg] pointer-events-none select-none animate-float z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-28 h-28 absolute bottom-1/3 left-1/4 opacity-20 rotate-[-10deg] pointer-events-none select-none animate-drift z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-20 h-20 absolute top-20 right-20 opacity-15 rotate-[55deg] pointer-events-none select-none animate-drift z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-22 h-22 absolute bottom-10 left-32 opacity-10 rotate-[-30deg] pointer-events-none select-none animate-float z-0"
       />
       {/* Added more leaves for better coverage */}
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-18 h-18 absolute top-[45%] left-5 opacity-15 rotate-[20deg] pointer-events-none select-none animate-float z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-26 h-26 absolute top-[15%] right-[5%] opacity-20 rotate-[-70deg] pointer-events-none select-none animate-drift z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-14 h-14 absolute bottom-[5%] left-[45%] opacity-10 rotate-[80deg] pointer-events-none select-none animate-float z-0"
       />
       <img
-        src="/images/leaf.png"
+        src="/Images/leaf.png"
         alt="Decorative Leaf"
         className="hidden md:block w-22 h-22 absolute top-[30%] left-[40%] opacity-10 rotate-[-50deg] pointer-events-none select-none animate-drift z-0"
       />

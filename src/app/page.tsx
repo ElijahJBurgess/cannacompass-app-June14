@@ -111,7 +111,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
-        <div className="max-w-[1440px] mx-auto px-8 py-5">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-5">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center gap-0">
@@ -120,7 +120,7 @@ export default function Home() {
                 alt="CannaCompass Logo"
                 width={64}
                 height={56}
-                className="w-16 h-14 object-contain block align-middle m-0 p-0"
+                className="w-12 h-10 sm:w-16 sm:h-14 object-contain block align-middle m-0 p-0"
                 style={{marginRight: '-8px'}}
               />
               <Image
@@ -128,13 +128,13 @@ export default function Home() {
                 alt="CannaCompass"
                 width={260}
                 height={40}
-                className="w-64 h-10 object-contain block align-middle m-0 p-0"
+                className="w-40 h-8 sm:w-64 sm:h-10 object-contain block align-middle m-0 p-0"
                 style={{marginLeft: '-8px'}}
               />
             </div>
 
             {/* Navigation Links */}
-            <div className="flex items-center gap-8">
+            <div className="hidden sm:flex items-center gap-8">
               <div className="flex items-center gap-8">
                 <Link href="/" className="text-neutral-800 text-base font-semibold font-['Poppins'] leading-loose">
                   Home
@@ -160,6 +160,13 @@ export default function Home() {
                 </span>
               </Link>
             </div>
+
+            {/* Mobile menu button */}
+            <div className="sm:hidden">
+              <button className="w-10 h-10 bg-green-900 rounded-full flex items-center justify-center">
+                <span className="text-white text-sm font-semibold">☰</span>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -167,7 +174,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="pt-[97px]">
         {/* Hero Section */}
-        <section className="relative h-[660px]">
+        <section className="relative h-[500px] sm:h-[660px]">
           <Image
             src="/Images/hero-bg.png"
             alt="Hero Background"
@@ -175,14 +182,14 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="relative max-w-[1440px] mx-auto px-8">
-            <div className="w-[654px] pt-[108px]">
+          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8">
+            <div className="w-full max-w-[654px] pt-[60px] sm:pt-[108px]">
               <div className="flex flex-col gap-5">
-                <h1 className="text-white text-7xl font-extrabold font-['Manrope'] leading-[90px]">
+                <h1 className="text-white text-4xl sm:text-5xl md:text-7xl font-extrabold font-['Manrope'] leading-tight sm:leading-[90px]">
                   Find Your <br/>
                   Perfect Cannabis Match with AI
                 </h1>
-                <p className="w-[555px] text-zinc-100/75 text-lg font-medium font-['Manrope'] leading-7">
+                <p className="w-full max-w-[555px] text-zinc-100/75 text-base sm:text-lg font-medium font-['Manrope'] leading-relaxed sm:leading-7">
                   Answer a few quick questions, or use your voice—our AI will recommend the best cannabis strains & products for your needs.
                 </p>
               </div>
@@ -190,7 +197,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <Link 
                   href="/quiz"
-                  className="w-48 p-3.5 bg-green-900 rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 inline-flex justify-center items-center gap-2.5"
+                  className="w-full sm:w-48 p-3.5 bg-green-900 rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 inline-flex justify-center items-center gap-2.5"
                 >
                   <span className="text-white text-lg font-semibold font-['Poppins'] leading-9">
                     Start Quiz
@@ -200,7 +207,7 @@ export default function Home() {
                 <button
                   onClick={() => console.log('Voice capture start')}
                   aria-label="Use voice to start the quiz"
-                  className="w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 inline-flex justify-center items-center gap-2.5 hover:bg-gray-100 transition"
+                  className="w-full sm:w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 inline-flex justify-center items-center gap-2.5 hover:bg-gray-100 transition"
                 >
                   <span className="text-green-900 text-lg font-semibold font-['Poppins'] leading-9">
                     Use My Voice
@@ -212,11 +219,11 @@ export default function Home() {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-24 px-8">
+        <section className="py-12 sm:py-24 px-4 sm:px-8">
           <div className="max-w-[987.50px] mx-auto">
             <div className="flex flex-col items-center gap-8">
               {/* Header */}
-              <div className="w-[594px] flex flex-col items-center gap-3.5">
+              <div className="w-full max-w-[594px] flex flex-col items-center gap-3.5">
                 <div className="w-28 flex flex-col items-center gap-1.5">
                   <div className="w-7 h-7 bg-lime-100 rounded-full flex items-center justify-center">
                     <Leaf className="w-4 h-4 text-lime-700" aria-hidden="true" />
@@ -225,54 +232,54 @@ export default function Home() {
                     HOW IT WORKS
                   </div>
                 </div>
-                <h2 className="text-teal-950 text-5xl font-extrabold font-['Manrope'] capitalize leading-[68px] text-center">
+                <h2 className="text-teal-950 text-3xl sm:text-4xl md:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-[68px] text-center">
                   3 Simple Steps to Your Perfect Cannabis Match
                 </h2>
               </div>
 
               {/* Steps */}
-              <div className="flex justify-start items-center gap-14">
+              <div className="flex flex-col sm:flex-row justify-start items-center gap-8 sm:gap-14">
                 {/* Step 1 */}
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-20 h-20 bg-lime-100 rounded-full flex items-center justify-center hover:scale-[1.05] transition-transform">
                     <ClipboardList className="w-10 h-10 text-lime-700 stroke-[2.5]" aria-hidden="true" />
                   </div>
-                  <h3 className="w-60 text-teal-950 text-2xl font-extrabold font-['Manrope'] capitalize leading-[67.47px] text-center">
+                  <h3 className="w-full max-w-[240px] sm:w-60 text-teal-950 text-xl sm:text-2xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-[67.47px] text-center">
                     Tell Us What You Need
                   </h3>
-                  <p className="w-60 text-neutral-400 text-lg font-normal font-['Inter'] leading-loose text-center">
+                  <p className="w-full max-w-[240px] sm:w-60 text-neutral-400 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed sm:leading-loose text-center">
                     User selects desired effects (relaxation, focus, etc.)
                   </p>
                 </div>
 
                 {/* Divider */}
-                <div className="w-16 h-0 rotate-90 border border-neutral-100" />
+                <div className="hidden sm:block w-16 h-0 rotate-90 border border-neutral-100" />
 
                 {/* Step 2 */}
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-20 h-20 bg-lime-100 rounded-full flex items-center justify-center hover:scale-[1.05] transition-transform">
                     <Sparkles className="w-10 h-10 text-lime-700 stroke-[2.5]" aria-hidden="true" />
                   </div>
-                  <h3 className="w-60 text-teal-950 text-2xl font-extrabold font-['Manrope'] capitalize leading-[67.47px] text-center">
+                  <h3 className="w-full max-w-[240px] sm:w-60 text-teal-950 text-xl sm:text-2xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-[67.47px] text-center">
                     AI Matches You Instantly
                   </h3>
-                  <p className="w-60 text-neutral-400 text-lg font-normal font-['Inter'] leading-loose text-center">
+                  <p className="w-full max-w-[240px] sm:w-60 text-neutral-400 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed sm:leading-loose text-center">
                     Our system finds matches from hundreds of products
                   </p>
                 </div>
 
                 {/* Divider */}
-                <div className="w-16 h-0 rotate-90 border border-neutral-100" />
+                <div className="hidden sm:block w-16 h-0 rotate-90 border border-neutral-100" />
 
                 {/* Step 3 */}
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-20 h-20 bg-lime-100 rounded-full flex items-center justify-center hover:scale-[1.05] transition-transform">
                     <HeartHandshake className="w-10 h-10 text-lime-700 stroke-[2.5]" aria-hidden="true" />
                   </div>
-                  <h3 className="w-72 text-teal-950 text-2xl font-extrabold font-['Manrope'] capitalize leading-9 text-center">
+                  <h3 className="w-full max-w-[240px] sm:w-72 text-teal-950 text-xl sm:text-2xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-9 text-center">
                     Get Personalized Recommendations
                   </h3>
-                  <p className="w-60 text-neutral-400 text-lg font-normal font-['Inter'] leading-loose text-center">
+                  <p className="w-full max-w-[240px] sm:w-60 text-neutral-400 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed sm:leading-loose text-center">
                     Users see curated product matches
                   </p>
                 </div>
@@ -282,22 +289,22 @@ export default function Home() {
         </section>
 
         {/* Instantly Connect With Your Needs Section */}
-        <section className="py-16 px-8">
+        <section className="py-12 sm:py-16 px-4 sm:px-8">
           <div className="max-w-[1440px] mx-auto flex flex-col gap-12">
             <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-2">
               <div>
                 <div className="text-lime-700 text-base font-bold font-['Manrope'] capitalize leading-tight mb-2">
                   HOW IT WORKS
                 </div>
-                <h2 className="text-teal-950 text-5xl font-extrabold font-['Manrope'] capitalize leading-[68px]">
+                <h2 className="text-teal-950 text-3xl sm:text-4xl md:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-[68px]">
                   Instantly Connect With Your Needs
                 </h2>
               </div>
-              <div className="max-w-[493px] text-neutral-600 text-lg font-normal font-['Inter'] leading-loose">
+              <div className="max-w-[493px] text-neutral-600 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed sm:leading-loose">
                 Tell us how you feel — whether it's stress, insomnia, or pain — and we'll instantly match you with plant-based products that support your specific wellness goals.
               </div>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
               {[
                 { label: 'Anxiety', icon: Gauge, color: 'bg-orange-50/70' },
                 { label: 'Chronic Pain', icon: Pill, color: 'bg-green-50/70' },
@@ -322,27 +329,27 @@ export default function Home() {
         </section>
 
         {/* Featured Products Section */}
-        <section className="py-24 px-8 bg-green-50">
+        <section className="py-12 sm:py-24 px-4 sm:px-8 bg-green-50">
           <div className="max-w-[1191px] mx-auto flex flex-col items-center gap-8">
             {/* Section Header */}
-            <div className="w-[594px] flex flex-col items-center gap-3.5">
+            <div className="w-full max-w-[594px] flex flex-col items-center gap-3.5">
               <div className="w-28 flex flex-col items-center gap-1.5">
                 <div className="w-7 h-7 bg-lime-100 rounded-full flex items-center justify-center">
                   <ShoppingBag className="w-4 h-4 text-lime-700" aria-hidden="true" />
                 </div>
-                <div className="text-lime-700 text-base font-bold font-['Manrope'] capitalize leading-[68px] text-center">
+                <div className="text-lime-700 text-base font-bold font-['Manrope'] capitalize leading-tight sm:leading-[68px] text-center">
                   PRODUCTS
                 </div>
               </div>
-              <h2 className="text-teal-950 text-5xl font-extrabold font-['Manrope'] capitalize leading-[68px] text-center">
+              <h2 className="text-teal-950 text-3xl sm:text-4xl md:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-[68px] text-center">
                 Featured Products
               </h2>
             </div>
 
             {/* Product Cards Grid */}
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {[1,2,3,4].map((i) => (
-                <div key={i} className="w-72 h-96 relative rounded-xl overflow-hidden shadow-lg bg-white flex flex-col justify-end">
+                <div key={i} className="w-full max-w-[288px] mx-auto h-80 sm:h-96 relative rounded-xl overflow-hidden shadow-lg bg-white flex flex-col justify-end">
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-green-50 to-green-100 flex items-center justify-center">
                     <Package className="w-24 h-24 text-green-800 opacity-20" />
                   </div>
@@ -363,7 +370,7 @@ export default function Home() {
 
             {/* Explore All Button */}
             <div className="flex justify-center mt-8">
-              <button className="w-48 p-3.5 bg-green-900 rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-white text-lg font-semibold font-['Poppins'] leading-9">
+              <button className="w-full sm:w-48 p-3.5 bg-green-900 rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-white text-lg font-semibold font-['Poppins'] leading-9">
                 Explore All
               </button>
             </div>
@@ -371,17 +378,17 @@ export default function Home() {
         </section>
 
         {/* Matched Products Section */}
-        <section className="py-24 px-8 bg-green-50">
+        <section className="py-12 sm:py-24 px-4 sm:px-8 bg-green-50">
           <div className="max-w-[1191px] mx-auto flex flex-col items-center gap-8">
             {/* Section Header */}
-            <div className="w-[594px] flex flex-col items-center gap-1">
+            <div className="w-full max-w-[594px] flex flex-col items-center gap-1">
               <div className="w-7 h-7 bg-lime-100 rounded-full flex items-center justify-center mb-2">
                 <BrainCircuit className="w-4 h-4 text-lime-700" aria-hidden="true" />
               </div>
-              <div className="text-lime-700 text-base font-bold font-['Manrope'] capitalize leading-[68px] text-center">
+              <div className="text-lime-700 text-base font-bold font-['Manrope'] capitalize leading-tight sm:leading-[68px] text-center">
                 AI MATCH
               </div>
-              <h2 className="text-teal-950 text-5xl font-extrabold font-['Manrope'] capitalize leading-[68px] text-center">
+              <h2 className="text-teal-950 text-3xl sm:text-4xl md:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight sm:leading-[68px] text-center">
                 Matched Products
               </h2>
               <div className="flex items-center gap-1 text-lime-700 text-sm font-medium animate-pulse">
@@ -428,17 +435,17 @@ export default function Home() {
         </section>
 
         {/* Call to Action Section */}
-        <section className="relative py-24 px-8 bg-green-900 overflow-hidden">
+        <section className="relative py-12 sm:py-24 px-4 sm:px-8 bg-green-900 overflow-hidden">
           {/* Background image */}
           <div className="absolute inset-0 bg-[url('/Images/cc-hero-heading-1.png')] bg-cover bg-center pointer-events-none" />
           <div className="relative max-w-[586px] mx-auto flex flex-col items-center gap-7 z-10">
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight text-center">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-['Manrope'] capitalize leading-tight text-center">
               Ready to Find Your Perfect Cannabis Match?
             </h2>
             <div className="flex justify-center items-center">
               <Link 
                 href="/quiz"
-                className="w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-green-900 text-lg font-semibold font-['Poppins'] leading-9"
+                className="w-full sm:w-48 p-3.5 bg-white rounded-full shadow-hero-button outline outline-[1.19px] outline-offset-[-1.19px] outline-white/30 flex justify-center items-center gap-2.5 text-green-900 text-lg font-semibold font-['Poppins'] leading-9"
               >
                 Start Quiz
               </Link>
@@ -448,10 +455,10 @@ export default function Home() {
       </main>
 
       {/* Footer Section */}
-      <footer className="bg-green-50/60 rounded-t-2xl shadow-[0px_0px_21.1px_0px_rgba(151,148,148,0.12)] px-8 py-20 mt-0">
+      <footer className="bg-green-50/60 rounded-t-2xl shadow-[0px_0px_21.1px_0px_rgba(151,148,148,0.12)] px-4 sm:px-8 py-12 sm:py-20 mt-0">
         <div className="max-w-[1387px] mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
           {/* Logo and Description */}
-          <div className="w-80 flex flex-col gap-3">
+          <div className="w-full md:w-80 flex flex-col gap-3">
             <div className="flex items-center gap-0 mb-2">
               <Image
                 src="/Images/cannacompass-compass-logo.png"
@@ -466,21 +473,21 @@ export default function Home() {
                 alt="CannaCompass"
                 width={260}
                 height={40}
-                className="w-64 h-10 object-contain block align-middle m-0 p-0"
+                className="w-40 sm:w-64 h-10 object-contain block align-middle m-0 p-0"
                 style={{marginLeft: '-8px'}}
               />
             </div>
-            <div className="w-72 text-neutral-700 text-lg font-normal font-['Inter'] leading-relaxed">
+            <div className="w-full md:w-72 text-neutral-700 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed">
               CannaCompass let you find Your Perfect Cannabis Match with AI
             </div>
           </div>
           {/* Quick Links */}
-          <div className="w-80 flex flex-col gap-3">
+          <div className="w-full md:w-80 flex flex-col gap-3">
             <div className="text-stone-950 text-lg font-bold font-['Inter'] leading-snug">
               Quick Links
             </div>
             <div className="flex flex-col gap-6">
-              <div className="text-neutral-700 text-lg font-normal font-['Inter'] leading-relaxed">
+              <div className="text-neutral-700 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed">
                 About | Blog | Terms & Privacy
               </div>
               <div className="flex items-center gap-4">
@@ -491,15 +498,15 @@ export default function Home() {
             </div>
           </div>
           {/* List Your Products */}
-          <div className="w-80 flex flex-col gap-3">
+          <div className="w-full md:w-80 flex flex-col gap-3">
             <div className="text-stone-950 text-lg font-bold font-['Inter'] leading-snug">
               List your products
             </div>
             <div className="flex flex-col gap-3.5">
-              <div className="text-neutral-700 text-lg font-normal font-['Inter'] leading-relaxed">
+              <div className="text-neutral-700 text-base sm:text-lg font-normal font-['Inter'] leading-relaxed">
                 Want to feature your products on our platform? <span className="text-green-900 font-bold">Get in touch!</span>
               </div>
-              <button className="w-32 h-10 p-2 bg-green-900 rounded-full shadow-md outline outline-[0.63px] outline-offset-[-0.63px] outline-green-950 flex justify-center items-center gap-2">
+              <button className="w-full sm:w-32 h-10 p-2 bg-green-900 rounded-full shadow-md outline outline-[0.63px] outline-offset-[-0.63px] outline-green-950 flex justify-center items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-white" />
                 <span className="text-white text-xs font-semibold font-['Poppins'] leading-tight">List your products</span>
               </button>
